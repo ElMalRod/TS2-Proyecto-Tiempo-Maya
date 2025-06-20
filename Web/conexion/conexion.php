@@ -1,15 +1,9 @@
 <?php
 $servername = "127.0.0.1";
 $username_DB = "root";
-<<<<<<< HEAD
-<<<<<<< Updated upstream
 $password_DB = "root";
-=======
 $password_DB = "";
->>>>>>> Stashed changes
-=======
 $password_DB = "";
->>>>>>> 156e4d905f28022a54848bc4b1cba2a82b9b4dbb
 $dbname = "tiempomaya";
 
 // Create connection

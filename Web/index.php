@@ -65,21 +65,13 @@ else
 				</div>
 
 				<div class="row my-4">
-<<<<<<< HEAD
 					<div class="col index-col">
-=======
-					<div class="col principal" style="">
->>>>>>> 156e4d905f28022a54848bc4b1cba2a82b9b4dbb
 						<?php
 							echo "<img src='img/uinal/$img1.png' alt='imagen de $img1' class='index-img' />";
 							echo "<h4 class='text-white text-center mt-4 info w-full'>$haab</h4>";
 						?>
 					</div>
-<<<<<<< HEAD
 					<div class="col index-col">
-=======
-					<div class="col principal">
->>>>>>> 156e4d905f28022a54848bc4b1cba2a82b9b4dbb
 						<?php
 							echo "<img src='img/nahual/$img2.png' alt='imagen de $img2' class='index-img' />";
 							echo "<h4 class='text-white text-center mt-4 info'>$cholquij</h4>";
@@ -122,26 +114,8 @@ else
 	</div>
 
 	<?php include "blocks/bloquesJs1.html" ?>
-<<<<<<< HEAD
 	<script src="js/animation.js"></script>
 	<script src="js/changeBackground.js"></script>
-=======
-    <script src="https://cdn.skypack.dev/spltjs@1.0.8"></script>
-    <script src="https://cdn.skypack.dev/animejs@3.2.1"></script>
-    <script>
-        document.addEventListener('DOMContentLoaded', (event) => {
-            splt({});
-
-            anime({
-                targets: '.char',
-                loop: true,
-                direction: 'alternate',
-                translateY: [0, -20],
-                delay: anime.stagger(25),
-            });
-        });
-    </script>
->>>>>>> 156e4d905f28022a54848bc4b1cba2a82b9b4dbb
 
 </body>
 

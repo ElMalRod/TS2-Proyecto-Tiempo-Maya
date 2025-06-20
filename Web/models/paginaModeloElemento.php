@@ -8,20 +8,11 @@ session_start(); ?>
 // include('../backend/buscar/get_src.php');
 $conn = include '../conexion/conexion.php';
 $tabla = $_GET['elemento'];
-<<<<<<< Updated upstream
 $table = strtolower($tabla);
 $fmt = "png";
 $datos = $conn->query("SELECT nombre,significado,htmlCodigo FROM tiempomaya." . $table . ";");
 $elementos = $datos;
 $informacion = $conn->query("SELECT htmlCodigo FROM tiempomaya.pagina WHERE nombre='" . $tabla . "';");
-=======
-$table =strtolower($tabla);
-$datos = $conn->query("SELECT nombre,significado,htmlCodigo FROM tiempomaya." . $table . ";");
-$elementos = $datos;
-$informacion = $conn->query("SELECT htmlCodigo FROM tiempomaya.pagina WHERE nombre='" . $tabla . "';");
-
-
->>>>>>> Stashed changes
 
 function getAudioSrc($nombre, $tabla) {
     $nombre = strtolower($nombre);
@@ -60,13 +51,8 @@ else
 	<link rel="stylesheet" href="../css/estiloAdmin.css?v=<?php echo (rand()); ?>" />
 	<link rel="stylesheet" href="../css/paginaModelo.css?v=<?php echo (rand()); ?>" />
 	<link rel="stylesheet" href="../css/animation.css" />
-<<<<<<< HEAD
-	<link rel="stylesheet" href="../css/index.css?v=<?php echo (rand()); ?>" />
-
-=======
     <!-- Añadir Font Awesome para usar iconos -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
->>>>>>> 156e4d905f28022a54848bc4b1cba2a82b9b4dbb
 </head>
 
 <?php include "../NavBar2.php" ?>
@@ -150,14 +136,9 @@ function playAudio(src) {
 </section>
 
 
-<<<<<<< HEAD
 	<?php include "../blocks/bloquesJs.html" ?>
 	<script src="../js/animation.js"></script>
 	<script src="../js/changeBackground.js"></script>
-=======
-    <?php include "../blocks/bloquesJs.html" ?>
-    <script src="../js/animation.js"></script>
->>>>>>> 156e4d905f28022a54848bc4b1cba2a82b9b4dbb
 
     <script>
         function playAudio(audioSrc) {

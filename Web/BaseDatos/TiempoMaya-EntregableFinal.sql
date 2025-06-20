@@ -16,8 +16,6 @@ DROP DATABASE IF EXISTS `tiempomaya`;
 
 CREATE DATABASE `tiempomaya` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci;
 
-<<<<<<< Updated upstream
-=======
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
 /*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
@@ -30,7 +28,6 @@ CREATE DATABASE `tiempomaya` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_gener
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 DROP DATABASE IF EXISTS `tiempomaya`;
 CREATE DATABASE  IF NOT EXISTS `tiempomaya` /*!40100 DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci */ /*!80016 DEFAULT ENCRYPTION='N' */;
->>>>>>> Stashed changes
 USE `tiempomaya`;
 
 -- --------------------------------------------------------
@@ -1164,261 +1161,73 @@ ADD
 	CONSTRAINT `fk_uinal_categoria1` FOREIGN KEY (`categoria`) REFERENCES `categoria` (`nombre`);
 
 
-CREATE TABLE `cruz` (
-	`nacimiento` int DEFAULT NULL,
-	`izquierdo` int NOT NULL,
-	`derecho` int NOT NULL,
-	`destino` int NOT NULL,
-	`concepcion` int DEFAULT NULL,
-	PRIMARY KEY(`nacimiento`),
-	FOREIGN KEY (`nacimiento`) REFERENCES `nahual`(`idweb`),
-	FOREIGN KEY (`izquierdo`) REFERENCES `nahual`(`idweb`),
-	FOREIGN KEY (`derecho`) REFERENCES `nahual`(`idweb`),
-	FOREIGN KEY (`destino`) REFERENCES `nahual`(`idweb`),
-	FOREIGN KEY (`concepcion`) REFERENCES `nahual`(`idweb`)
-) ENGINE = InnoDB DEFAULT CHARSET = utf8mb4;
+CREATE TABLE IF NOT EXISTS `cruz` (
+  `nacimiento`     INT       NOT NULL,
+  `izquierdo`      INT       NOT NULL,
+  `derecho`        INT       NOT NULL,
+  `destino`        INT       NOT NULL,
+  `concepcion`     INT       NULL,
+  PRIMARY KEY (`nacimiento`),
+  FOREIGN KEY (`nacimiento`)  REFERENCES `nahual` (`idweb`),
+  FOREIGN KEY (`izquierdo`)   REFERENCES `nahual` (`idweb`),
+  FOREIGN KEY (`derecho`)     REFERENCES `nahual` (`idweb`),
+  FOREIGN KEY (`destino`)     REFERENCES `nahual` (`idweb`),
+  FOREIGN KEY (`concepcion`)  REFERENCES `nahual` (`idweb`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
-INSERT INTO 
-`cruz` (
-		`nacimiento`,
-		`concepcion`,
-		`destino`,
-		`izquierdo`,
-		`derecho`
-	)
-VALUES (
-		14,
-		6,
-		2,
-		8,
-		0
-	),
-	(
-		15,
-		7,
-		3,
-		9,
-		1
-	),
-	(
-		16,
-		8,
-		4,
-		2,
-		10
-	),
-	(
-		17,
-		9,
-		5,
-		11,
-		3
-	),
-	(
-		18,
-		10,
-		6,
-		12,
-		4
-	),
-	(
-		19,
-		11,
-		7,
-		13,
-		5
-	),
-	(
-		0,
-		12,
-		8,
-		14,
-		6
-	),
-	(
-		1,
-		13,
-		9,
-		0,
-		14
-	),
-	(
-		2,
-		14,
-		10,
-		16,
-		8
-	),
-	(
-		3,
-		15,
-		11,
-		17,
-		9
-	),
-	(
-		4,
-		16,
-		12,
-		18,
-		10
-	),
-	(
-		5,
-		17,
-		13,
-		19,
-		11
-	),
-	(
-		6,
-		18,
-		14,
-		0,
-		12
-	),
-	(
-		7,
-		19,
-		15,
-		1,
-		13
-	),
-	(
-		8,
-		0,
-		16,
-		2,
-		14
-	),
-	(
-		9,
-		1,
-		17,
-		3,
-		15
-	),
-	(
-		10,
-		2,
-		18,
-		4,
-		16
-	),
-	(
-		11,
-		3,
-		19,
-		5,
-		17
-	),
-	(
-		12,
-		4,
-		0,
-		6,
-		18
-	),
-	(
-		13,
-		5,
-		1,
-		7,
-		19
-	);
+-- Poblamos con tus valores
+INSERT INTO `cruz` (
+  `nacimiento`, `concepcion`, `destino`, `izquierdo`, `derecho`
+) VALUES
+  (14, 6,  2,  8,  0),
+  (15, 7,  3,  9,  1),
+  (16, 8,  4,  2, 10),
+  (17, 9,  5, 11,  3),
+  (18,10,  6, 12,  4),
+  (19,11,  7, 13,  5),
+  ( 0,12,  8, 14,  6),
+  ( 1,13,  9,  0, 14),
+  ( 2,14, 10, 16,  8),
+  ( 3,15, 11, 17,  9),
+  ( 4,16, 12, 18, 10),
+  ( 5,17, 13, 19, 11),
+  ( 6,18, 14,  0, 12),
+  ( 7,19, 15,  1, 13),
+  ( 8, 0, 16,  2, 14),
+  ( 9, 1, 17,  3, 15),
+  (10, 2, 18,  4, 16),
+  (11, 3, 19,  5, 17),
+  (12, 4,  0,  6, 18),
+  (13, 5,  1,  7, 19);
 
-CREATE TABLE `animal_guia` (
-	`idweb_nahual` int DEFAULT NULL,
-	`nombre` varchar(255) NOT NULL,
-	PRIMARY KEY(`idweb_nahual`),
-	FOREIGN KEY (`idweb_nahual`) REFERENCES `nahual`(`idweb`)
-) ENGINE = InnoDB DEFAULT CHARSET = utf8mb4;
+CREATE TABLE IF NOT EXISTS `animal_guia` (
+  `idweb_nahual` INT       NOT NULL,
+  `animal`       VARCHAR(255) NOT NULL,
+  PRIMARY KEY (`idweb_nahual`),
+  FOREIGN KEY (`idweb_nahual`) REFERENCES `nahual` (`idweb`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
-INSERT INTO 
-`animal_guia` (
-		`idweb_nahual`,
-		`nombre`
-	)
-VALUES (
-		14,
-		'El Tiburón'
-	),
-	(
-		15,
-		'El Perro'
-	),
-	(
-		16,
-		'El Mono'
-	),
-	(
-		17,
-		'El Gato'
-	),
-	(
-		18,
-		'El Armadillo'
-	),
-	(
-		19,
-		'El Jaguar'
-	),
-	(
-		0,
-		'El Águila'
-	),
-	(
-		1,
-		'La Abeja'
-	),
-	(
-		2,
-		'El Pàjaro Carpintero'
-	),
-	(
-		3,
-		'El Tucán'
-	),
-	(
-		4,
-		'La Tortuga'
-	),
-	(
-		5,
-		'El Humano'
-	),
-	(
-		6,
-		'El Cocodrilo'
-	),
-	(
-		7,
-		'El Colibrí'
-	),
-	(
-		8,
-		'La Guacamaya'
-	),
-	(
-		9,
-		'La Araña'
-	),
-	(
-		10,
-		'La Serpiente'
-	),
-	(
-		11,
-		'El Búho'
-	),
-	(
-		12,
-		'El Venado'
-	),
-	(
-		13,
-		'El Conejo'
-	);
+INSERT INTO `animal_guia` (`idweb_nahual`, `animal`) VALUES
+  (14, 'El Tiburón'),
+  (15, 'El Perro'),
+  (16, 'El Mono'),
+  (17, 'El Gato'),
+  (18, 'El Armadillo'),
+  (19, 'El Jaguar'),
+  ( 0, 'El Águila'),
+  ( 1, 'La Abeja'),
+  ( 2, 'El Pájaro Carpintero'),
+  ( 3, 'El Tucán'),
+  ( 4, 'La Tortuga'),
+  ( 5, 'El Humano'),
+  ( 6, 'El Cocodrilo'),
+  ( 7, 'El Colibrí'),
+  ( 8, 'La Guacamaya'),
+  ( 9, 'La Araña'),
+  (10, 'La Serpiente'),
+  (11, 'El Búho'),
+  (12, 'El Venado'),
+  (13, 'El Conejo');
 
 ALTER TABLE `animal_guia` RENAME COLUMN `nombre` TO `animal`; 
 
