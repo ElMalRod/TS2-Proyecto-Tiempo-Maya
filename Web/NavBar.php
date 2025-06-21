@@ -135,6 +135,19 @@ $periodosNav = $conn->query("SELECT nombre FROM tiempomaya.periodo order by orde
                                 <li class="nav-item">
                                     <a class="nav-link" href="numeros.php">Numeros Mayas</a>
                                 </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="calculadora-cuenta-larga.php">Cuenta Larga</a>
+                                </li>
+                            </ul>
+                        </li>
+
+                        <li>
+                            <a class="nav-link" href="#">Sabiduria Maya&nbsp;&nbsp;&nbsp;&nbsp; </a>
+                            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                <li class="nav-item"><a class="nav-link" href="infografia-dia.php">Infografia</a></li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="cruz-maya.php">Cruz Maya</a>
+                                </li>
                             </ul>
                         </li>
 

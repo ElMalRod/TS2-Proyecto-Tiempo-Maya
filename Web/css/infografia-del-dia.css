@@ -1,0 +1,90 @@
+/* Contenedor principal y overlay */
+#inicio {
+  position: relative;
+  width: 100%;
+  /* altura definida inline */
+}
+#inicio::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0,0,0,0.6);
+  z-index: 1;
+}
+#inicioContainer {
+  position: relative;
+  z-index: 2;
+  max-width: 600px;
+  margin: 0 auto;
+  text-align: center;
+  padding-top: 150px;
+}
+
+/* Tarjeta transparente */
+#formulario-infografia {
+  background: rgba(255,255,255,0.2);
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 8px 16px rgba(0,0,0,0.3);
+  width: 100%;
+  max-width: 500px;
+  margin: 0 auto;
+}
+#formulario-infografia h1 {
+  color: #3ad29f;
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+/* Layout de inputs + botón */
+.form-cuenta-row {
+  display: flex;
+  gap: 10px;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+.form-cuenta-group {
+  flex: 1 1 70%;
+  display: flex;
+  flex-direction: column;
+}
+.form-cuenta-group.button-group {
+  flex: 1 1 20%;
+  justify-content: flex-end;
+}
+.form-cuenta-group label {
+  color: #fff;
+  font-weight: 500;
+  margin-bottom: 8px;
+}
+#fecha {
+  padding: 10px;
+  border: 2px solid #00fff2;
+  border-radius: 6px;
+  outline: none;
+  transition: box-shadow 0.3s;
+}
+#fecha:focus {
+  box-shadow: 0 0 8px rgba(0,255,242,0.7);
+}
+#btnGenerarInfografia {
+  padding: 12px 24px;
+  background: transparent;
+  border: 2px solid #fff;
+  color: #fff;
+  border-radius: 24px;
+  transition: background 0.3s;
+}
+#btnGenerarInfografia:hover {
+  background: #3ad29f;
+  border-color: #3ad29f;
+}
+
+/* Canvas */
+#canvas {
+  display: block;
+  margin: 20px auto 0;
+  width: 100%;
+  border-radius: 8px;
+  background: none;
+}

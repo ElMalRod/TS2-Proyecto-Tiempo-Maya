@@ -1,0 +1,93 @@
+/* Contenedor principal sobre el fondo */
+#inicio {
+  width: 100%;
+  height: 100vh;
+  background: url('../conexion/<?php echo $urlFondo ?>') center/cover no-repeat fixed;
+  position: relative;
+}
+#inicioContainer {
+  position: relative;
+  z-index: 2;
+  max-width: 600px;
+  margin: 0 auto;
+  text-align: center;
+  padding-top: 150px;
+}
+
+/* Tarjeta transparente */
+#formulario-cuenta-larga {
+  background: rgba(255,255,255,0.2);
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 8px 16px rgba(0,0,0,0.3);
+}
+#formulario-cuenta-larga h2 {
+  color: #3ad29f;
+  font-size: 1.75rem;
+  margin-bottom: 20px;
+  text-align: center;
+}
+#formulario-cuenta-larga label {
+  color: #fff;
+  font-weight: 500;
+}
+
+/* Inputs alineados */
+.form-cuenta-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+.form-cuenta-group {
+  flex: 1 1 18%;
+  display: flex;
+  flex-direction: column;
+}
+.form-control-cuenta-larga {
+  width: 100%;
+  padding: 10px;
+  border: 2px solid #00fff2;
+  border-radius: 6px;
+  outline: none;
+  transition: box-shadow 0.3s;
+}
+.form-control-cuenta-larga:focus {
+  box-shadow: 0 0 8px rgba(0,255,242,0.7);
+}
+
+/* Botón estilo floating */
+#formulario-cuenta-larga button {
+  display: block;
+  margin: 0 auto 30px;
+  padding: 12px 24px;
+  color: #fff;
+  background: transparent;
+  border: 2px solid #fff;
+  border-radius: 24px;
+  transition: background 0.3s;
+}
+#formulario-cuenta-larga button:hover {
+  background: #3ad29f;
+  border-color: #3ad29f;
+}
+
+/* Tabla de resultados */
+#tabla-cuenta-larga {
+  width: 100%;
+  border-collapse: collapse;
+}
+#tabla-cuenta-larga th,
+#tabla-cuenta-larga td {
+  padding: 12px;
+  border: 1px solid #444;
+  color: #fff;
+}
+#tabla-cuenta-larga th {
+  background: #222;
+  text-align: left;
+  width: 40%;
+}
+#tabla-cuenta-larga td {
+  background: #333;
+}
