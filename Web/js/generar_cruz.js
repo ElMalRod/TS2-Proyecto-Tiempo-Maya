@@ -108,11 +108,11 @@ function generarCruz(mano_izquierda, concepcion, nombre_nahual, destino, mano_de
     ];
 
     var imagePaths = [
-        'img/nahual/' + concepcion + '.png',
-        'img/nahual/' + mano_izquierda + '.png',
-        'img/nahual/' + nombre_nahual + '.png',
-        'img/nahual/' + mano_derecha + '.png',
-        'img/nahual/' + destino + '.png'
+        'img/nahualinfo/' + concepcion + '.png',
+        'img/nahualinfo/' + mano_izquierda + '.png',
+        'img/nahualinfo/' + nombre_nahual + '.png',
+        'img/nahualinfo/' + mano_derecha + '.png',
+        'img/nahualinfo/' + destino + '.png'
     ];
 
     var texts = [

@@ -193,4 +193,27 @@ function getEnergiaInfo($Id, $conn)
     }
 }
 
+/**
+ * Devuelve el significado de un nahual dado su nombre.
+ *
+ * @param string $nahual
+ * @param mysqli $conn
+ * @return string
+ */
+function getNahualSignificado($nahual, $conn)
+{
+    $name = $conn->real_escape_string($nahual);
+    $sql = "SELECT significado
+              FROM tiempomaya.nahual
+             WHERE nombre = '{$name}'";
+    $result = $conn->query($sql);
+    if ($result && $row = $result->fetch_assoc()) {
+        return $row['significado'];
+    } else {
+        return 'Error: ' . $conn->error;
+    }
+}
+
+
+
 ?>

@@ -1,4 +1,8 @@
-<?php session_start(); ?>
+<?php 
+//mostrar errores
+ error_reporting(E_ALL);
+ ini_set('display_errors', 1);
+session_start(); ?>
 <?php
 $conn = include "conexion/conexion.php";
 
@@ -28,13 +32,18 @@ $nombre_nahual = str_replace("'", "\\'", $nombre_nahual);
 
 <head>
     <meta charset="utf-8">
-	<link rel="icon" href="img/piramide-maya.png">
+    <link rel="icon" href="img/piramide-maya.png">
     <title>Tiempo Maya - Cruz Maya</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <?php include "blocks/bloquesCss.html" ?>
     <link rel="stylesheet" href="css/estilo.css?v=<?php echo (rand()); ?>" />
     <link rel="stylesheet" href="css/sabiduriaMaya.css?v=<?php echo (rand()); ?>" />
     <script src="js/generar_cruz.js"></script>
+
+    <link rel="stylesheet" href="css/animation.css" />
+
+</head>
+
 </head>
 
 <body>
@@ -57,12 +66,15 @@ $nombre_nahual = str_replace("'", "\\'", $nombre_nahual);
                     </form>
                     <canvas id="canvas"></canvas>
                     <script>
-                        document.getElementById('btnGenerarCruz').addEventListener('click', function () {
-                            generarCruz('<?php echo $mano_izquierda; ?>', '<?php echo $concepcion; ?>', '<?php echo $nombre_nahual; ?>', '<?php echo $destino; ?>', '<?php echo $mano_derecha; ?>');
-                        });
+                    document.getElementById('btnGenerarCruz').addEventListener('click', function() {
+                        generarCruz('<?php echo $mano_izquierda; ?>', '<?php echo $concepcion; ?>',
+                            '<?php echo $nombre_nahual; ?>', '<?php echo $destino; ?>',
+                            '<?php echo $mano_derecha; ?>');
+                    });
                     </script>
                     <script>
-                        generarCruz('<?php echo $mano_izquierda; ?>', '<?php echo $concepcion; ?>', '<?php echo $nombre_nahual; ?>', '<?php echo $destino; ?>', '<?php echo $mano_derecha; ?>');
+                    generarCruz('<?php echo $mano_izquierda; ?>', '<?php echo $concepcion; ?>',
+                        '<?php echo $nombre_nahual; ?>', '<?php echo $destino; ?>', '<?php echo $mano_derecha; ?>');
                     </script>
                 </div>
             </div>
@@ -72,6 +84,9 @@ $nombre_nahual = str_replace("'", "\\'", $nombre_nahual);
     </div>
 
     <?php include "blocks/bloquesJs1.html" ?>
+
+    <script src="js/animation.js"></script>
+    <script src="js/changeBackground.js"></script>
 
 </body>
 
