@@ -88,3 +88,7 @@
   border-radius: 8px;
   background: none;
 }
+.img-infografia {
+  display: none !important;
+}
+

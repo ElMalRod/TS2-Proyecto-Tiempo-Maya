@@ -1,7 +1,7 @@
 function generarInfografia(nombre_energia, significado_energia, nombre_nahual, significado_nahual) {
     var imageUrl = 'img/infografia.jpg';
     var nahualImageUrl = 'img/nahual/' + nombre_nahual + '.png';
-    var energiaImgeUrl = 'img/energia/' + nombre_energia + '.png';
+    var energiaImgeUrl = 'img/energianum/' + nombre_energia + '.png';
 
     var canvas = document.getElementById('canvas');
     var ctx = canvas.getContext('2d');
