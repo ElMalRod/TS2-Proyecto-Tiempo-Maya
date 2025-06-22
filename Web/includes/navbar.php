@@ -145,6 +145,12 @@
                                 <a class="dropdown-item" href="/cruz-maya.php">Cruz Maya</a>
                             </div>
                         </li>
+                        <!-- Calendario gregoriano-Maya -->
+                        <li class="nav-item">
+                            <a class="nav-link" href="/gregomaya.php">
+                                Calendario Gregoriano Maya
+                            </a>
+                        </li>
                     </ul>
                 </div>
             </div>

@@ -1,0 +1,183 @@
+/* ----------------- CALENDARIO ----------------- */
+.calendar {
+    width: auto;             
+    max-width: 100%;           
+    border-collapse: collapse;
+    table-layout: auto;        /* columnas flexibles */
+    margin: 0 auto;            /* centra el calendario */
+}
+
+.calendar th,
+.calendar td {
+    border: 1px solid #1f1f1f;
+    padding: 10px 8px;
+    text-align: center;
+    color: #fff !important;
+    font-size: 1.3rem; 
+    vertical-align: top;       
+}
+
+.calendar th {
+    background-color: #c9592d !important;
+}
+
+.calendar caption {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+/* ----------------- İCONOS MAYAS ----------------- */
+.images-container {
+    display: flex;
+    flex-wrap: nowrap;         
+    justify-content: space-between; 
+    align-items: center;
+    width: 100%;              
+}
+
+.maya_cal,
+.maya_num {
+    margin: 0 4px;            
+    width: 32px;
+    filter: brightness(1.2);
+}
+
+.maya_num {
+    transform: rotate(-90deg);
+    width: 24px;
+    object-fit: scale-down;
+}
+
+/* ----------------- CONTENEDOR DEL CALENDARIO ----------------- */
+.calendar-container {
+    padding: 0 2%;
+    overflow-x: auto;        
+}
+
+/* ----------------- ESCALA Y POSICIONAMIENTO ----------------- */
+.contenedor_info {
+    transform: scale(0.85);    
+    transform-origin: top center;
+    margin-top: 20px;
+}
+
+/* ----------------- SELECTORES DE FECHA ----------------- */
+.selector-fecha {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.selector-fecha select,
+.selector-fecha button {
+    background-color: #333 !important;
+    color: #fff !important;
+    border: 1px solid #666 !important;
+    padding: 8px 12px;
+    margin: 0 5px;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.selector-fecha select:hover,
+.selector-fecha button:hover {
+    background-color: #555 !important;
+}
+
+.selector-fecha button {
+    cursor: pointer;
+    font-weight: bold;
+}
+
+/* ----------------- FORMULARIO Y FONDO ----------------- */
+.contenedor_formulario {
+    background: transparent;
+    width: 90%;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 20px 0;
+}
+
+/* ----------------- SECCIÓN INICIO ----------------- */
+.inicio {
+    width: 100%;
+    min-height: 100vh;
+    background: url(../img/fondo.png) center/cover no-repeat fixed;
+    position: relative;
+}
+
+.inicio:before {
+    background: rgba(0, 0, 0, 0.3);
+    position: absolute;
+    top: 0; right: 0; bottom: 0; left: 0;
+    content: "";
+}
+
+#inicioContainer {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 60px 0;
+    text-align: center;
+}
+
+.inicio h1 {
+    margin: 0 0 20px;
+    font-weight: 700;
+    line-height: 1.2;
+    text-transform: uppercase;
+    color: #fff;
+    font-size: 48px;
+}
+
+.inicio h2 {
+    color: #eee;
+    font-size: 24px;
+    margin-bottom: 30px;
+}
+
+/* ----------------- BOTÓN INICIO ----------------- */
+.inicio .btn-get-started {
+    font-family: "Poppins", sans-serif;
+    text-transform: uppercase;
+    font-weight: 500;
+    font-size: 16px;
+    letter-spacing: 1px;
+    display: inline-block;
+    padding: 10px 30px;
+    border-radius: 50px;
+    transition: 0.3s;
+    margin: 10px;
+    border: 2px solid #fff;
+    color: #fff;
+}
+
+.inicio .btn-get-started:hover {
+    background: #c9592d;
+    border-color: #c9592d;
+}
+
+/* ----------------- RESPONSIVE ----------------- */
+@media (max-width: 1024px) {
+    .contenedor_info { transform: scale(0.75); }
+    .calendar th,
+    .calendar td {
+        font-size: 0.75rem;
+        padding: 4px 2px;
+    }
+    .maya_cal,
+    .maya_num { width: 24px; }
+}
+
+@media (max-width: 768px) {
+    .calendar-container { overflow-x: scroll; }
+    .selector-fecha select,
+    .selector-fecha button {
+        font-size: 14px;
+        padding: 6px 10px;
+    }
+    .inicio h1 { font-size: 32px; }
+}
