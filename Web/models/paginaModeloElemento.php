@@ -1,5 +1,7 @@
 <?php
-
+// mostrar errores
+ error_reporting(E_ALL);
+ ini_set('display_errors', 1);
 use function PHPSTORM_META\type;
 
 session_start(); ?>
@@ -55,7 +57,7 @@ else
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 
-<?php include "../NavBar2.php" ?>
+<?php include "../NavBar.php" ?>
 
 <body>
     <section id="inicio"  style="background: url(<?php echo $fondo; ?>) top center;">
