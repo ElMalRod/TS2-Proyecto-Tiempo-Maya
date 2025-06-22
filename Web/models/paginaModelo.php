@@ -1,4 +1,7 @@
-<?php session_start(); ?>
+
+<?php 
+// paginaModelo.php
+session_start(); ?>
 <?php
 
 $conn = include '../conexion/conexion.php';
@@ -23,6 +26,7 @@ $elementos = $conn->query("SELECT nombre FROM tiempomaya.pagina WHERE categoria=
 	<link rel="stylesheet" href="../css/paginaModelo.css?v=<?php echo (rand()); ?>" />
 	<link rel="stylesheet" href="../css/animation.css" />
 	<link rel="stylesheet" href="../css/index.css?v=<?php echo (rand()); ?>" />
+	<link rel="stylesheet" href="../css/ruedaCalendario.css?v=<?php echo (rand()); ?>" />
 
 
 </head>
@@ -75,6 +79,15 @@ $elementos = $conn->query("SELECT nombre FROM tiempomaya.pagina WHERE categoria=
 	}
 
 	?>
+	        <?php
+        if ($pagina === "Rueda Calendarica") {
+            include_once $_SERVER['DOCUMENT_ROOT'] . "/models/ruedaCalendarica.php";
+        } else if ($pagina === "Cuenta Larga") {
+            include_once $_SERVER['DOCUMENT_ROOT'] . "/models/cuenta-larga.php";
+        } else if ($pagina === "Calendario Cholquij") {
+            include_once $_SERVER['DOCUMENT_ROOT'] . "/models/cruz-maya.php";
+        }
+        ?>
 
 	<?php include "../blocks/bloquesJs1.html" ?>
 	<script src="../js/animation.js"></script>
