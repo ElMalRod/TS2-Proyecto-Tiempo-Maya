@@ -1,14 +1,73 @@
-
-<?php 
-// paginaModelo.php
-session_start(); ?>
 <?php
+// paginaModelo.php
 
-$conn = include '../conexion/conexion.php';
-$pagina = $_GET['pagina'];
-$informacion = $conn->query("SELECT htmlCodigo,seccion,nombre FROM tiempomaya.pagina WHERE categoria='" . $pagina . "' order by orden;");
-$secciones = $conn->query("SELECT seccion FROM tiempomaya.pagina WHERE categoria='" . $pagina . "' group by seccion order by orden;");
-$elementos = $conn->query("SELECT nombre FROM tiempomaya.pagina WHERE categoria='" . $pagina . "' AND nombre!='Informacion' AND seccion!='Informacion' order by orden;");
+session_start();
+
+// 1) Capturar idioma de la URL y guardarlo en sesión
+if (isset($_GET['idioma'])) {
+    $_SESSION['idioma'] = $_GET['idioma'];
+}
+$idioma = $_SESSION['idioma'] ?? 'es';
+
+// 2) Conexión y obtención de categoría
+$conn   = include __DIR__ . '/../conexion/conexion.php';
+$pagina = $_GET['pagina'] ?? '';
+
+// 3) Determinar columna de contenido según idioma
+switch ($idioma) {
+    case 'en':
+        $columna = 'htmlCodigo_en';
+        break;
+    case 'qu':
+        $columna = 'htmlCodigo_qu';
+        break;
+    case 'kq':
+        $columna = 'htmlCodigo_kq';
+        break;
+    case 'yu':
+        $columna = 'htmlCodigo_yu';
+        break;
+    default:
+        $columna = 'htmlCodigo';
+}
+
+// 4) Consultas con la columna dinámica
+$informacion      = "SELECT {$columna} AS htmlCodigo, seccion, nombre
+                  FROM tiempomaya.pagina
+                 WHERE categoria = ?
+              ORDER BY orden";
+$stmtInfo    = $conn->prepare($informacion);
+$stmtInfo->bind_param('s', $pagina);
+$stmtInfo->execute();
+$informacion = $stmtInfo->get_result();
+
+$secciones  = "SELECT seccion
+                    FROM tiempomaya.pagina
+                   WHERE categoria = ?
+                GROUP BY seccion
+                ORDER BY orden";
+$stmtSec       = $conn->prepare($secciones);
+$stmtSec->bind_param('s', $pagina);
+$stmtSec->execute();
+$secciones     = $stmtSec->get_result();
+
+$elementos     = "SELECT nombre
+                    FROM tiempomaya.pagina
+                   WHERE categoria = ?
+                     AND nombre <> 'Informacion'
+                     AND seccion <> 'Informacion'
+                ORDER BY orden";
+$stmtElm       = $conn->prepare($elementos);
+$stmtElm->bind_param('s', $pagina);
+$stmtElm->execute();
+$elementos     = $stmtElm->get_result();
+
+// Hora para JS si necesitas
+date_default_timezone_set('America/Mexico_City');
+$horario = date("H:i:s");
+
+
+
 
 ?>
 
@@ -92,6 +151,7 @@ $elementos = $conn->query("SELECT nombre FROM tiempomaya.pagina WHERE categoria=
 	<?php include "../blocks/bloquesJs1.html" ?>
 	<script src="../js/animation.js"></script>
 	<script src="../js/changeBackground.js"></script>
+	<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
 
 </body>
 

@@ -7,11 +7,17 @@
   $nahualesNav = $conn->query("SELECT nombre FROM tiempomaya.nahual ORDER BY nombre;");
   $energiasNav = $conn->query("SELECT nombre FROM tiempomaya.energia ORDER BY id;");
   $periodosNav = $conn->query("SELECT nombre FROM tiempomaya.periodo ORDER BY orden;");
+// Obtenemos el idioma seleccionado de la URL o usar el predeterminado (es)
+$idioma = isset($_GET['idioma']) ? $_GET['idioma'] : (isset($_SESSION['idioma']) ? $_SESSION['idioma'] : 'es');
+$_SESSION['idioma'] = $idioma;
+
+  $idioma = isset($_GET['idioma']) ? $_GET['idioma'] : 'es';
   include __DIR__ . '/../mensaje.php';
   function slugify($name) {
     $clean = str_replace(["'", "’"], '', $name);
     return strtolower($clean);
   }
+
 ?>
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" />
 <link rel="stylesheet" href="/css/navbar.css">
@@ -150,6 +156,20 @@
                             <a class="nav-link" href="/gregomaya.php">
                                 Calendario Gregoriano Maya
                             </a>
+                        </li>
+                        <!-- iDIOMA -->
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="languageDropdown" role="button"
+                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <?= strtoupper($idioma) ?>
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="languageDropdown">
+                                <a class="dropdown-item" href="?idioma=es">Español</a>
+                                <a class="dropdown-item" href="?idioma=en">Inglés</a>
+                                <a class="dropdown-item" href="?idioma=qu">Quiché</a>
+                                <a class="dropdown-item" href="?idioma=kq">Kaqchikel</a>
+                                <a class="dropdown-item" href="?idioma=yu">Yucateco</a>
+                            </div>
                         </li>
                     </ul>
                 </div>

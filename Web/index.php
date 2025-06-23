@@ -90,19 +90,19 @@ else
 						<div class='principal' style="padding: 15px; width: auto;">
 							<table class="tabla-info">
 								<tr>
-									<th><i class='fas fa-arrow-right' style="font-size: 0.55rem; color:rgb(248, 248, 96)"></i> Calendario Haab</th>
+									<th><i class='fas fa-arrow-right' style="font-size: 0.55rem; color:rgb(255, 255, 255) !important"></i> Calendario Haab</th>
 									<td><?php echo isset($haab) ? $haab : ''; ?></td>
 								</tr>
 								<tr>
-									<th><i class='fas fa-arrow-right' style="font-size: 0.55rem; color:rgb(248, 248, 96)"></i> Calendario Cholquij</th>
+									<th><i class='fas fa-arrow-right' style="font-size: 0.55rem; color:rgb(255, 255, 255) !important"></i> Calendario Cholquij</th>
 									<td><?php echo isset($cholquij) ? $cholquij : ''; ?></td>
 								</tr>
 								<tr>
-									<th><i class='fas fa-arrow-right' style="font-size: 0.55rem; color:rgb(248, 248, 96)"></i> Cuenta Larga</th>
+									<th><i class='fas fa-arrow-right' style="font-size: 0.55rem; color:rgb(255, 255, 255) !important"></i> Cuenta Larga</th>
 									<td><?php echo isset($cuenta_larga) ? $cuenta_larga : ''; ?></td>
 								</tr>
 								<tr>
-									<th><i class='fas fa-arrow-right' style="font-size: 0.55rem; color:rgb(248, 248, 96)"></i> Fecha a Consultar</th>
+									<th><i class='fas fa-arrow-right' style="font-size: 0.55rem; color:rgb(255, 255, 255) !important"></i> Fecha a Consultar</th>
 									<td><?php echo isset($fecha_consultar) ? $fecha_consultar : ''; ?></td>
 								</tr>
 							</table>
