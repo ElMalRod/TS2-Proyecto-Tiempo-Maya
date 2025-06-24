@@ -47,6 +47,7 @@ function langUrl(string $lang): string {
 ?>
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" />
 <link rel="stylesheet" href="/css/navbar.css">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
 <header id="header" class="navbar-custom">
     <nav class="navbar navbar-expand-lg navbar-dark">
@@ -326,6 +327,76 @@ document.querySelectorAll('.dropdown-submenu > .dropdown-item.dropdown-toggle')
             parent.classList.toggle('show');
             const submenu = parent.querySelector('.dropdown-menu');
             submenu.classList.toggle('show');
+        });
+    });
+</script>
+<script>
+(function() {
+    const header = document.getElementById('header');
+    window.addEventListener('scroll', () => {
+        header.classList.toggle('scrolled', window.scrollY > 80);
+    });
+})();
+
+document.addEventListener('DOMContentLoaded', () => {
+    const DESKTOP = 991;
+
+
+    document
+        .querySelector('.navbar-nav')
+        .addEventListener('click', e => {
+            const toggle = e.target.closest('.dropdown-toggle');
+            if (!toggle) return;
+
+            const parent = toggle.parentElement;
+            const menu = parent.querySelector('.dropdown-menu');
+
+            if (window.innerWidth < DESKTOP) {
+                e.preventDefault();
+                parent.classList.toggle('show');
+                menu.classList.toggle('show');
+            }
+        });
+
+    // hover solo para desktop
+    document
+        .querySelectorAll('.navbar-custom .dropdown')
+        .forEach(drop => {
+            drop.addEventListener('mouseenter', () => {
+                if (window.innerWidth >= DESKTOP) drop.classList.add('show');
+            });
+            drop.addEventListener('mouseleave', () => {
+                if (window.innerWidth >= DESKTOP) drop.classList.remove('show');
+            });
+        });
+});
+</script>
+
+<script>
+document
+    .querySelectorAll('.nav-item.dropdown > .nav-link.dropdown-toggle')
+    .forEach(function(btn) {
+        btn.addEventListener('click', function(e) {
+            if (window.innerWidth < 991) {
+                e.preventDefault();
+                const box = btn.parentElement;
+                box.classList.toggle('show');
+                box.querySelector('.dropdown-menu').classList.toggle('show');
+            }
+        });
+    });
+
+
+document
+    .querySelectorAll('.dropdown-submenu > a.dropdown-item')
+    .forEach(function(btn) {
+        btn.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            const ownBox = btn.parentElement;
+            const subMenu = btn.nextElementSibling;
+            ownBox.classList.toggle('show');
+            subMenu.classList.toggle('show');
         });
     });
 </script>

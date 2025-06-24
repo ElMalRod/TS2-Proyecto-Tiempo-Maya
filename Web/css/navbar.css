@@ -249,3 +249,41 @@
     outline: none !important;
     box-shadow: none !important;
 }
+
+/* --- la anchura en teléfonos --- */
+@media (max-width: 575.98px) {
+
+  .menu-center-wrapper {
+    justify-content: flex-end !important;
+  }
+
+  .navbar-collapse {
+    position: absolute;          
+    top: 100%;              
+    left: 0;
+    right: 0;
+    background: rgba(25,32,40,0.97);
+    padding: .5rem 0;
+  }
+}
+
+@media (max-width: 991.98px) {
+
+  .navbar-custom .dropdown-submenu > .dropdown-menu {
+    display: none;
+  }
+
+  .navbar-custom .dropdown-submenu.show   > .dropdown-menu,
+  .navbar-custom .dropdown-menu.show{
+    display: block !important;
+  }
+}
+
+.navbar-custom .dropdown-submenu > .dropdown-menu {
+  opacity: 0;           /* cerrado */
+  transition: opacity .18s;
+}
+
+.navbar-custom .dropdown-submenu.show > .dropdown-menu {
+  opacity: 1;
+}
