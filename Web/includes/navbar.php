@@ -18,6 +18,32 @@ $_SESSION['idioma'] = $idioma;
     return strtolower($clean);
   }
 
+  
+
+?>
+
+<?php
+/**
+ * Devuelve la URL actual (path+query+hash) con el parámetro idioma cambiado.
+ */
+function langUrl(string $lang): string {
+    // Obtiene la URL actual completa
+    $fullUrl = $_SERVER['REQUEST_URI'];
+
+    // Separa path, query y fragment
+    $parts = parse_url($fullUrl);
+    $path = $parts['path'] ?? '';
+    parse_str($parts['query'] ?? '', $queryParams);
+
+    // Cambia/añade el idioma
+    $queryParams['idioma'] = $lang;
+    $newQuery = http_build_query($queryParams);
+
+    // Reconstruye fragment si existe
+    $fragment = isset($parts['fragment']) ? '#'.$parts['fragment'] : '';
+
+    return $path . '?' . $newQuery . $fragment;
+}
 ?>
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" />
 <link rel="stylesheet" href="/css/navbar.css">
@@ -159,18 +185,18 @@ $_SESSION['idioma'] = $idioma;
                         </li>
                         <!-- iDIOMA -->
                         <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" id="languageDropdown" role="button"
-                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <a class="nav-link dropdown-toggle" href="#" id="languageDropdown" …>
                                 <?= strtoupper($idioma) ?>
                             </a>
                             <div class="dropdown-menu" aria-labelledby="languageDropdown">
-                                <a class="dropdown-item" href="?idioma=es">Español</a>
-                                <a class="dropdown-item" href="?idioma=en">Inglés</a>
-                                <a class="dropdown-item" href="?idioma=qu">Quiché</a>
-                                <a class="dropdown-item" href="?idioma=kq">Kaqchikel</a>
-                                <a class="dropdown-item" href="?idioma=yu">Yucateco</a>
+                                <a class="dropdown-item" href="<?= htmlspecialchars(langUrl('es')) ?>">Español</a>
+                                <a class="dropdown-item" href="<?= htmlspecialchars(langUrl('en')) ?>">Inglés</a>
+                                <a class="dropdown-item" href="<?= htmlspecialchars(langUrl('qu')) ?>">Quiché</a>
+                                <a class="dropdown-item" href="<?= htmlspecialchars(langUrl('kq')) ?>">Kaqchikel</a>
+                                <a class="dropdown-item" href="<?= htmlspecialchars(langUrl('yu')) ?>">Yucateco</a>
                             </div>
                         </li>
+
                     </ul>
                 </div>
             </div>

@@ -13,8 +13,14 @@ $_SESSION['idioma'] = $idioma;
 // include('../backend/buscar/get_src.php');
 $conn = include '../conexion/conexion.php';
 
-$tabla = $_GET['elemento'];
+$tabla = $_GET['elemento'] ?? null;
+if (!$tabla) {
+    // Si llegó sin elemento, redirige o muestra 404
+    header('Location: /models/paginaModelo.php');
+    exit;
+}
 $table = strtolower($tabla);
+
 
 // Determinar la columna de contenido según el idioma
 $columnaContenido = 'htmlCodigo';
