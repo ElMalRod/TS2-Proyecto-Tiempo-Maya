@@ -1,0 +1,9 @@
+INSERT INTO tiempomaya.señor_de_la_noche (id, nombre, categoria, imagen) VALUES (1, 'G1', 'g1', '/');
+INSERT INTO tiempomaya.señor_de_la_noche (id, nombre, categoria, imagen) VALUES (2, 'G2', 'g2', '/');
+INSERT INTO tiempomaya.señor_de_la_noche (id, nombre, categoria, imagen) VALUES (3, 'G3', 'g3', '/');
+INSERT INTO tiempomaya.señor_de_la_noche (id, nombre, categoria, imagen) VALUES (4, 'G4', 'g4', '/');
+INSERT INTO tiempomaya.señor_de_la_noche (id, nombre, categoria, imagen) VALUES (5, 'G5', 'g5', '/');
+INSERT INTO tiempomaya.señor_de_la_noche (id, nombre, categoria, imagen) VALUES (6, 'G6', 'g6', '/');
+INSERT INTO tiempomaya.señor_de_la_noche (id, nombre, categoria, imagen) VALUES (7, 'G7', 'g7', '/');
+INSERT INTO tiempomaya.señor_de_la_noche (id, nombre, categoria, imagen) VALUES (8, 'G8', 'g8', '/');
+INSERT INTO tiempomaya.señor_de_la_noche (id, nombre, categoria, imagen) VALUES (9, 'G9', 'g9', '/');
