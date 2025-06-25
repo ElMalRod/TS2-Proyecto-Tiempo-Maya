@@ -278,26 +278,43 @@ document.querySelectorAll('.dropdown-submenu').forEach(function(item) {
 });
 // Efecto scroll centrar menú principal
 (function() {
-    const menu = document.getElementById('menuScrollEffect');
-    const SCROLL_MAX = 220;
+  const menu      = document.getElementById('menuScrollEffect');
+  const SCROLL_MAX = 220;
 
-    function updateMenuJustify() {
-        if (!menu) return;
-        if (window.innerWidth < 991) {
-            menu.style.marginRight = '';
-            menu.style.paddingRight = '';
-            return;
-        }
-        const y = Math.min(window.scrollY, SCROLL_MAX);
-        const percent = y / SCROLL_MAX;
-        const mr = percent * 30;
-        menu.style.marginRight = `${mr}vw`;
-        menu.style.paddingRight = `${2 * (1 - percent)}rem`;
+  function updateMenuJustify() {
+    if (!menu) return;
+
+    // móvil: limpio todo
+    if (window.innerWidth < 992) {
+      menu.classList.remove('menu-centered');
+      menu.style.marginRight = '';
+      menu.style.paddingRight = '';
+      return;
     }
-    window.addEventListener('scroll', updateMenuJustify);
-    window.addEventListener('resize', updateMenuJustify);
-    updateMenuJustify();
+
+    const y = Math.min(window.scrollY, SCROLL_MAX);
+    const pct = y / SCROLL_MAX;
+
+    if (y < SCROLL_MAX) {
+    
+      menu.classList.remove('menu-centered');
+      menu.style.marginRight   = `${pct * MAX_VW}vw`;
+      menu.style.paddingRight  = `${2 * (1 - pct)}rem`;
+      menu.style.paddingLeft   = '';
+    } else {
+      // cambiamos a centrado, limpiamos margen
+      menu.classList.add('menu-centered');
+      menu.style.marginRight   = '';
+      menu.style.paddingRight  = '';
+      menu.style.paddingLeft   = '';
+    }
+  }
+
+  window.addEventListener('scroll',  updateMenuJustify);
+  window.addEventListener('resize',  updateMenuJustify);
+  document.addEventListener('DOMContentLoaded', updateMenuJustify);
 })();
+
 
 document.querySelectorAll('.dropdown-submenu').forEach(function(item) {
     // Hover en desktop
