@@ -45,7 +45,7 @@ $significado_nahual = strval($row_nahual['significado']);
 
     <?php include "blocks/bloquesCss.html"; ?>
     <link rel="stylesheet" href="css/estilo.css?v=<?php echo rand(); ?>" />
-    <link rel="stylesheet" href="css/sabiduriaMaya.css?v=<?php echo rand(); ?>" />
+    <link rel="stylesheet" href="css/infografia-del-dia.css?v=<?php echo rand(); ?>" />
     <script src="js/generar_infografia.js"></script>
 </head>
 
@@ -59,7 +59,8 @@ $significado_nahual = strval($row_nahual['significado']);
                 <h1>Infografía del día</h1>
                 <form action="#" method="GET">
                     <div class="mb-1">
-                        <label for="fecha" class="form-label">Fecha a buscar</label>
+                        <label for="fecha" class="form-label" style="color: white;">Fecha a buscar</label>
+
                         <input type="date" class="form-control" name="fecha" id="fecha"
                             value="<?php echo $fecha_consultar; ?>">
                     </div>
