@@ -62,7 +62,7 @@ $stmtElm->bind_param('s', $pagina);
 $stmtElm->execute();
 $elementos     = $stmtElm->get_result();
 
-// Hora para JS si necesitas
+// Hora para JS
 date_default_timezone_set('America/Mexico_City');
 $horario = date("H:i:s");
 

@@ -52,7 +52,9 @@ function langUrl(string $lang): string {
 <header id="header" class="navbar-custom">
     <nav class="navbar navbar-expand-lg navbar-dark">
         <div class="navbar-flex-container">
-            <a class="navbar-brand brand-fixed" href="/index.php"><strong>TIEMPO</strong> MAYA</a>
+            <a class="navbar-brand brand-fixed" href="/index.php">
+            <img src="/img/LogoTM2.png" alt="Logo Tiempo Maya" style="height: 40px;">
+            </a>
             <div class="menu-center-wrapper">
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navBarMenu"
                     aria-controls="navBarMenu" aria-expanded="false" aria-label="Toggle navigation">

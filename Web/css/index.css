@@ -13,3 +13,27 @@
     padding: 10px;
     padding-bottom: 0;
 }
+
+.glass-image-container {
+    background: rgba(255, 255, 255, 0.08);
+    padding: 1.5rem;
+    border-radius: 1rem;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+    max-width: 90%;
+    margin: 0 auto 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.index-col {
+    text-align: center;
+    margin: 1rem;
+}
+
+.index-img {
+    max-width: 100px;
+    height: auto;
+    filter: drop-shadow(0 0 5px rgba(255,255,255,0.3));
+}

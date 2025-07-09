@@ -6,10 +6,10 @@ ini_set('display_errors', 1);
 // Conexión a la base de datos
 $conn = include "conexion/conexion.php";
 
-// Zona horaria (Guatemala / US Central según tus necesidades)
+// Zona horaria (Guatemala / US Central)
 date_default_timezone_set('US/Central');
 
-// Determinar fecha de consulta (no se usa directamente en renderizado del calendario)
+// Determinar fecha de consulta
 if (isset($_GET['fecha'])) {
     $fecha_consultar = $_GET['fecha'];
 } else {
