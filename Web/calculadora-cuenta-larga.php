@@ -1,6 +1,6 @@
 <?php
 if (session_status() !== PHP_SESSION_ACTIVE) session_start();
-date_default_timezone_set('US/Central');
+date_default_timezone_set('America/Guatemala');
 
 $conn = include 'conexion/conexion.php';
 require_once './helpers/functions.php';

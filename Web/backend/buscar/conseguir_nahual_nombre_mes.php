@@ -1,7 +1,7 @@
 <?php
 // Conexión a la base de datos
 $conn = include "conexion/conexion.php";
-date_default_timezone_set('US/Central');
+date_default_timezone_set('America/Guatemala');
 
 // Crear un DateTime para el primer y último día del mes
 $inicioMes = new DateTime("$anioSeleccionado-$mesSeleccionado-01");

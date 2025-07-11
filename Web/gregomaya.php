@@ -6,8 +6,8 @@ ini_set('display_errors', 1);
 // Conexión a la base de datos
 $conn = include "conexion/conexion.php";
 
-// Zona horaria (Guatemala / US Central)
-date_default_timezone_set('US/Central');
+// Zona horaria (Guatemala)
+date_default_timezone_set('America/Guatemala');
 
 // Determinar fecha de consulta
 if (isset($_GET['fecha'])) {
@@ -25,7 +25,7 @@ if (isset($_GET['mes']) && isset($_GET['anio'])) {
     $anioSeleccionado = (int) date('Y'); // Año actual
 }
 
-// Nombres de mes en español (evita usar strftime)
+// Nombres de mes en español
 $meses = [
     'Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio',
     'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre'
@@ -111,7 +111,6 @@ foreach ($periodo as $fecha) {
                     </form>
                 </div>
 
-                <!-- Calendario vacío: se rellenará por JS -->
                 <div class="contenedor_info">
                     <div class="calendar-container">
                         <table class="calendar">
@@ -127,7 +126,6 @@ foreach ($periodo as $fecha) {
                                 </tr>
                             </thead>
                             <tbody>
-                                <!-- JavaScript insertará los días aquí -->
                             </tbody>
                         </table>
                     </div>

@@ -1,7 +1,6 @@
 <?php
-// Asegúrate de que las conexiones y la zona horaria estén correctamente configuradas
 $conn = include "conexion/conexion.php";
-date_default_timezone_set('US/Central');
+date_default_timezone_set('America/Guatemala');
 
 $fecha1 = new DateTime("1990-04-03");
 
@@ -12,7 +11,7 @@ $finMes->modify('last day of this month');
 $intervalo = new DateInterval('P1D');
 $periodo = new DatePeriod($inicioMes, $intervalo, $finMes);
 
-$resultados = []; // Inicializa el array para almacenar los resultados
+$resultados = [];
 
 foreach ($periodo as $fecha) {
     $fecha2 = $fecha;
@@ -49,7 +48,6 @@ foreach ($periodo as $fecha) {
     $uinal = $row['nombre'] . " ";
     $resultado = $uinal . strval($dia);
 
-    // Convierte la clave de día a un entero
     $dayKey = intval($fecha->format('d'));
     $resultadosUniales[$dayKey] = $resultado;
 }

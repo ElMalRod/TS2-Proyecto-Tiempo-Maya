@@ -5,7 +5,7 @@ $conn = include "conexion/conexion.php";
 if (isset($_GET['fecha'])) {
     $fecha_consultar = $_GET['fecha'];
 } else {
-    date_default_timezone_set('US/Central');
+    date_default_timezone_set('America/Guatemala');
     $fecha_consultar = date("Y-m-d");
 }
 

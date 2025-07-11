@@ -1,9 +1,6 @@
 <?php 
-// mostrar errores
-// error_reporting(E_ALL);
-// ini_set('display_errors', 1);
 session_start();
-date_default_timezone_set('US/Central');
+date_default_timezone_set('America/Guatemala');
 
 $conn = include "conexion/conexion.php";
 // añadido para obtener la ruta del fondo
@@ -13,7 +10,7 @@ $urlFondo = obtenerRutaFondo($conn);
 if (isset($_GET['fecha'])) {
     $fecha_consultar = $_GET['fecha'];
 } else {
-    date_default_timezone_set('US/Central');
+    date_default_timezone_set('America/Guatemala');
     $fecha_consultar = date("Y-m-d");
 }
 

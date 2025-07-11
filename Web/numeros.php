@@ -1,6 +1,6 @@
 <?php session_start(); ?>
 <?php
-    date_default_timezone_set('US/Central');
+    date_default_timezone_set('America/Guatemala');
     $conn = include "conexion/conexion.php";
     include './helpers/functions.php';
     $urlFondo = obtenerRutaFondo($conn);

@@ -6,7 +6,7 @@ $energias = $conn->query("SELECT nombre FROM tiempomaya.energia ORDER BY id;");
 $kines = $conn->query("SELECT nombre FROM tiempomaya.kin ORDER BY iddesk;");
 $uinales = $conn->query("SELECT nombre FROM tiempomaya.uinal ORDER BY iddesk;");
 
-date_default_timezone_set('US/Central');
+date_default_timezone_set('America/Guatemala');
 $fecha_consultar = date("Y-m-d");
 
 ?>

@@ -1,7 +1,7 @@
 <?php
 $conn = include $_SERVER['DOCUMENT_ROOT'] . "/conexion/conexion.php";
 
-date_default_timezone_set('US/Central');
+date_default_timezone_set('America/Guatemala');
 if (isset($_GET['fecha'])) {
     $fecha_consultar = $_GET['fecha'];
 } else {

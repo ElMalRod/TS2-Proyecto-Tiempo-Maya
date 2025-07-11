@@ -1,6 +1,6 @@
 <?php 
 session_start(); 
-date_default_timezone_set('US/Central');
+date_default_timezone_set('America/Guatemala');
 include("backend/buscar/conseguir_cruz.php");
 require_once './helpers/functions.php';
 
