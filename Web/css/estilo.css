@@ -114,11 +114,6 @@ h6 {
 #inicio {
   width: 100%;
   height: 100vh;
-<<<<<<< HEAD
-  /* background: url(../img/fondo.png) top center; */
-=======
-
->>>>>>> 156e4d905f28022a54848bc4b1cba2a82b9b4dbb
   background-size: cover;
   position: relative;
 }
@@ -150,7 +145,7 @@ h6 {
   align-items: center;
   flex-direction: column;
   text-align: center;
-  background-color: rgba(0, 0, 0, 0.5)
+  
 }
 
 #inicio h1 {

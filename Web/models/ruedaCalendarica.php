@@ -10,7 +10,7 @@ date_default_timezone_set('America/Guatemala');
 $fecha_consultar = date("Y-m-d");
 
 ?>
-
+ <link rel="stylesheet" href="css/estilo.css?v=<?php echo rand(); ?>" />
 <section id="rueda">
     <div class="container">
         <div class="section-header">
