@@ -16,9 +16,14 @@ $nahual = include 'backend/buscar/conseguir_nahual_nombre.php';
 $energia = include 'backend/buscar/conseguir_energia_numero.php';
 $haab = include 'backend/buscar/conseguir_uinal_nombre.php';
 $cuenta_larga = include 'backend/buscar/conseguir_fecha_cuenta_larga.php';
-$cholquij = $nahual . " " . strval($energia);
+
+// Formatear para mostrar (número primero)
+$cholquij_mostrar = strval($energia) . " " . $nahual;
+$haab_mostrar = preg_replace("/([\']|\w+) (\d+)/", '${2} ${1}', $haab);
+
+// Mantener formato original para imágenes
 $img1 = strtolower(str_replace("'", "", preg_replace("/([\']|\w+) (\d+)/", '${1}', $haab)));
-$img2 = strtolower(str_replace("'", "", preg_replace("/([\']+|\w+) (\d+)/", '${1}', $cholquij)));
+$img2 = strtolower(str_replace("'", "", preg_replace("/([\']+|\w+) (\d+)/", '${1}', $nahual . " " . strval($energia))));
 
 $cruz_info = getCruzInfo($nahual, $conn);
 $nac_img = strtolower(str_replace("'", "", preg_replace("/([\']+|\w+) (\d+)/", '${1}', $cruz_info['nacimiento'])));
@@ -66,12 +71,12 @@ $animal = getAnimalGuia($nahual, $conn);
                         <div class="calculadora-img-block glass">
                             <h4>Calendario Haab</h4>
                             <img src='img/uinal/<?php echo $img1; ?>.png' alt='imagen de <?php echo $img1; ?>' class='index-img' />
-                            <h4 class='calculadora-titulo'><?php echo $haab; ?></h4>
+                            <h4 class='calculadora-titulo'><?php echo $haab_mostrar; ?></h4>
                         </div>
                         <div class="calculadora-img-block glass">
                             <h4>Calendario Cholq'ij</h4>
                             <img src='./img/nahual/<?php echo $img2; ?>.png' alt='imagen de <?php echo $img2; ?>' class='index-img' />
-                            <h4 class='calculadora-titulo'><?php echo $cholquij; ?></h4>
+                            <h4 class='calculadora-titulo'><?php echo $cholquij_mostrar; ?></h4>
                         </div>
                         <div class="calculadora-img-block glass">
                             <h4>Cuenta Larga</h4>
