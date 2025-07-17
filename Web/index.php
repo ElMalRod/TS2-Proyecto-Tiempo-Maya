@@ -69,7 +69,8 @@ if ($hour >= 6 && $hour < 12) {
                 </div>
                 <div class="info-line-modern">
                     <i class="fas fa-calendar-alt"></i> Calendario Cholquij
-                    <span class="info-value-modern"><?php echo isset($cholquij_mostrar) ? $cholquij_mostrar : ''; ?></span>
+                    <span
+                        class="info-value-modern"><?php echo isset($cholquij_mostrar) ? $cholquij_mostrar : ''; ?></span>
                 </div>
                 <div class="info-line-modern">
                     <i class="fas fa-history"></i> Cuenta Larga
@@ -83,12 +84,14 @@ if ($hour >= 6 && $hour < 12) {
             <div class="calculadora-info-row">
                 <div class="calculadora-img-block glass">
                     <h4>Calendario Haab</h4>
-                    <img src='img/uinal/<?php echo $img1; ?>.png' alt='imagen de <?php echo $img1; ?>' class='index-img' />
+                    <img src='img/uinal/<?php echo $img1; ?>.png' alt='imagen de <?php echo $img1; ?>'
+                        class='index-img' />
                     <h4 class='calculadora-titulo'><?php echo $haab_mostrar; ?></h4>
                 </div>
                 <div class="calculadora-img-block glass">
                     <h4>Calendario Cholq'ij</h4>
-                    <img src='./img/nahual/<?php echo $img2; ?>.png' alt='imagen de <?php echo $img2; ?>' class='index-img' />
+                    <img src='./img/nahual/<?php echo $img2; ?>.png' alt='imagen de <?php echo $img2; ?>'
+                        class='index-img' />
                     <h4 class='calculadora-titulo'><?php echo $cholquij_mostrar; ?></h4>
                 </div>
                 <div class="calculadora-img-block glass">
@@ -103,13 +106,13 @@ if ($hour >= 6 && $hour < 12) {
     <?php include "blocks/bloquesJs1.html" ?>
     <script src="js/animation.js"></script>
     <script src="js/changeBackground.js"></script>
-<script>
-document.addEventListener('keydown', function(e) {
-    if (e.key.toLowerCase() === 'k' && e.ctrlKey && e.shiftKey) {  // K'in = Sol/día en maya
-        e.preventDefault();
-        
-        const mensaje = document.createElement('div');
-        mensaje.innerHTML = `
+    <script>
+    document.addEventListener('keydown', function(e) {
+        if (e.key.toLowerCase() === 'k' && e.ctrlKey && e.shiftKey) { // K'in = Sol/día en maya
+            e.preventDefault();
+
+            const mensaje = document.createElement('div');
+            mensaje.innerHTML = `
         <div style="
             position: fixed;
             top: 50%;
@@ -150,18 +153,18 @@ document.addEventListener('keydown', function(e) {
             <small style="color: #a7c4bc;">Presiona ESC para cerrar</small>
         </div>
         `;
-        
-        document.body.appendChild(mensaje);
 
-        document.addEventListener('keydown', function closeMsg(e) {
-            if (e.key === 'Escape') {
-                mensaje.remove();
-                document.removeEventListener('keydown', closeMsg);
-            }
-        });
-    }
-});
-</script>
+            document.body.appendChild(mensaje);
+
+            document.addEventListener('keydown', function closeMsg(e) {
+                if (e.key === 'Escape') {
+                    mensaje.remove();
+                    document.removeEventListener('keydown', closeMsg);
+                }
+            });
+        }
+    });
+    </script>
 </body>
 
 </html>
