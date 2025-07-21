@@ -57,7 +57,8 @@ $animal = getAnimalGuia($nahual, $conn);
     <div id="main-content">
         <section id="inicio">
             <div id="inicioContainer" class="inicio-container">
-                <div>
+                <!-- Contenedor del formulario (título, input y botón) -->
+                <div class="form-container">
                     <h1>Calculadora</h1>
                     <form action="#" method="GET">
                         <div class="mb-1">
@@ -67,22 +68,24 @@ $animal = getAnimalGuia($nahual, $conn);
                         </div>
                         <button type="submit" class="btn btn-get-started"><i class="far fa-clock"></i> Calcular</button>
                     </form>
-                    <div class="calculadora-info-row">
-                        <div class="calculadora-img-block glass">
-                            <h4>Calendario Haab</h4>
-                            <img src='img/uinal/<?php echo $img1; ?>.png' alt='imagen de <?php echo $img1; ?>' class='index-img' />
-                            <h4 class='calculadora-titulo'><?php echo $haab_mostrar; ?></h4>
-                        </div>
-                        <div class="calculadora-img-block glass">
-                            <h4>Calendario Cholq'ij</h4>
-                            <img src='./img/nahual/<?php echo $img2; ?>.png' alt='imagen de <?php echo $img2; ?>' class='index-img' />
-                            <h4 class='calculadora-titulo'><?php echo $cholquij_mostrar; ?></h4>
-                        </div>
-                        <div class="calculadora-img-block glass">
-                            <h4>Cuenta Larga</h4>
-                            <img src='./img/calendario.png' alt='imagen de calendario' class='index-img' />
-                            <h4 class='calculadora-titulo'><?php echo $cuenta_larga; ?></h4>
-                        </div>
+                </div>
+                
+                <!-- Contenedor de las imágenes -->
+                <div class="calculadora-info-row">
+                    <div class="calculadora-img-block glass">
+                        <h4>Calendario Haab</h4>
+                        <img src='img/uinal/<?php echo $img1; ?>.png' alt='imagen de <?php echo $img1; ?>' class='index-img' />
+                        <h4 class='calculadora-titulo'><?php echo $haab_mostrar; ?></h4>
+                    </div>
+                    <div class="calculadora-img-block glass">
+                        <h4>Calendario Cholq'ij</h4>
+                        <img src='./img/nahual/<?php echo $img2; ?>.png' alt='imagen de <?php echo $img2; ?>' class='index-img' />
+                        <h4 class='calculadora-titulo'><?php echo $cholquij_mostrar; ?></h4>
+                    </div>
+                    <div class="calculadora-img-block glass">
+                        <h4>Cuenta Larga</h4>
+                        <img src='./img/calendario.png' alt='imagen de calendario' class='index-img' />
+                        <h4 class='calculadora-titulo'><?php echo $cuenta_larga; ?></h4>
                     </div>
                 </div>
             </div>
@@ -90,7 +93,6 @@ $animal = getAnimalGuia($nahual, $conn);
     </div>
 
     <?php include "blocks/bloquesJs1.html" ?>
-
     <script src="js/animation.js"></script>
     <script src="js/changeBackground.js"></script>
 </body>
