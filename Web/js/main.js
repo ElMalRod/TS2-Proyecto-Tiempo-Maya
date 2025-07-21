@@ -109,6 +109,7 @@ jQuery(document).ready(async function ($) {
     };
 
     ruedaPicker.addEventListener("change", getRuedaCalendarica);
+    ruedaPicker.addEventListener("input", getRuedaCalendarica);
     await getRuedaCalendarica();
   }
 
