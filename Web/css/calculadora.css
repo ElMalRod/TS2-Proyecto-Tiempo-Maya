@@ -1,6 +1,6 @@
 
 #formulario {
-    background: rgba(63, 64, 66, 0.7);
+    background: transparent !important;
     margin-top: 50px;
     transition: 0.5s;
     width: 50%;
@@ -51,13 +51,6 @@ body {
     flex-direction: column;
     justify-content: center;
     min-height: 0;
-}
-
-
-.form-control{
-    width: 85%;
-    font-size: 18px;
-    margin: auto;
 }
 
 #tabla{
@@ -157,6 +150,7 @@ body {
     width: 100%;
     margin-bottom: 2.4rem;
 }
+
 .calculadora-img-block.glass {
      background: transparent;
     border-radius: 1.5rem;
@@ -194,40 +188,56 @@ body {
 /* Responsive: en móvil se apilan y siguen alineadas */
 
 @media (max-width: 750px) {
-        #inicio { padding-bottom: 0 !important; }
+    #inicio { 
+        padding-bottom: 0 !important; 
+    }
+    
     .calculadora-info-row {
-        flex-direction: column;
+        display: flex;
+        flex-direction: row;
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+        -webkit-overflow-scrolling: touch;
+        justify-content: flex-start;
+        padding: 20px 15px;
+        margin: 0 -15px 20px;
         gap: 1.2rem;
-        align-items: center;
-        margin-bottom: 0 !important;
+        align-items: stretch;
     }
+    
     .calculadora-img-block.glass {
-        width: 95vw;
-        max-width: 260px;
-        padding: 1.2rem 0.7rem;
+        scroll-snap-align: start;
+        flex: 0 0 85%;
+        width: auto;
+        max-width: none;
+        min-width: 0;
+        margin-bottom: 0;
     }
+    
     .calculadora-img-block img.index-img {
         width: 100px !important;
         height: 100px !important;
     }
+    
     .calculadora-titulo {
         font-size: 1.12em;
     }
+
 }
 
-/* Responsive */
-
 @media (max-width: 600px) {
-     #inicio { padding-bottom: 0 !important; }
-    .calculadora-img-block.glass {
-        width: 98vw;
-        max-width: 98vw;
-        padding-left: 0.5rem;
-        padding-right: 0.5rem;
+    #inicio { 
+        padding-bottom: 0 !important; 
     }
+    
+    .calculadora-img-block.glass {
+        flex: 0 0 90%;
+        padding: 1.2rem;
+    }
+    
     .calculadora-img-block img.index-img {
-        width: 100px !important;
-        height: 100px !important;
+        width: 80px !important;
+        height: 80px !important;
     }
 }
 

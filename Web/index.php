@@ -81,23 +81,23 @@ if ($hour >= 6 && $hour < 12) {
                 </div>
             </div>
             <br>
-            <div class="calculadora-info-row">
-                <div class="calculadora-img-block glass">
+            <div class="index-info-row">
+                <div class="index-img-block glass">
                     <h4>Calendario Haab</h4>
                     <img src='img/uinal/<?php echo $img1; ?>.png' alt='imagen de <?php echo $img1; ?>'
                         class='index-img' />
-                    <h4 class='calculadora-titulo'><?php echo $haab_mostrar; ?></h4>
+                    <h4 class='index-titulo'><?php echo $haab_mostrar; ?></h4>
                 </div>
-                <div class="calculadora-img-block glass">
+                <div class="index-img-block glass">
                     <h4>Calendario Cholq'ij</h4>
                     <img src='./img/nahual/<?php echo $img2; ?>.png' alt='imagen de <?php echo $img2; ?>'
                         class='index-img' />
-                    <h4 class='calculadora-titulo'><?php echo $cholquij_mostrar; ?></h4>
+                    <h4 class='index-titulo'><?php echo $cholquij_mostrar; ?></h4>
                 </div>
-                <div class="calculadora-img-block glass">
+                <div class="index-img-block glass">
                     <h4>Cuenta Larga</h4>
                     <img src='./img/calendario.png' alt='imagen de calendario' class='index-img' />
-                    <h4 class='calculadora-titulo'><?php echo $cuenta_larga; ?></h4>
+                    <h4 class='index-titulo'><?php echo $cuenta_larga; ?></h4>
                 </div>
             </div>
         </div>

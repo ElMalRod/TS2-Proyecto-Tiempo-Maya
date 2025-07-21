@@ -1,6 +1,6 @@
 <?php
-  include __DIR__ . '/../backend/buscar/get_src.php';
-  $conn = include __DIR__ . '/../conexion/conexion.php';
+  include $_SERVER['DOCUMENT_ROOT'] . '/backend/buscar/get_src.php';
+  $conn = include $_SERVER['DOCUMENT_ROOT'] . '/conexion/conexion.php';
   if (!$conn) die('Error: no se pudo conectar a la base de datos.');
   $kinesNav    = $conn->query("SELECT nombre FROM tiempomaya.kin    ORDER BY nombre;");
   $uinalesNav  = $conn->query("SELECT nombre FROM tiempomaya.uinal  ORDER BY nombre;");
